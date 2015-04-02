@@ -27,3 +27,6 @@ This program is written in python specifically for OSX and tested on Yosemite 10
 
 ###Caveat
 I have noticed that the Automator App files do not run the first time you download it to you machine. You will need to open the file with Automator and run it once, save and close. You should be good after that.
+
+###Thanks
+Feel free to share you comments and thoughts. I am new to github.
