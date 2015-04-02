@@ -26,7 +26,8 @@ This program is written in python specifically for OSX and tested on Yosemite 10
 	- The wallpaper downloader app ensures that you only have the latest wallpaper in your folder. It ensures to delete all files from that folder before downloading the new wallpaper.
 
 ###Caveat
-I have noticed that the Automator App files do not run the first time you download it to you machine. You will need to open the file with Automator and run it once, save and close. You should be good after that.
+~~I have noticed that the Automator App files do not run the first time you download it to you machine. You will need to open the file with Automator and run it once, save and close. You should be good after that.~~
+With the dmg file, this may be fixed. Awaiting user input to confirm.
 
 ###Thanks
 Feel free to share you comments and thoughts. I am new to github.
