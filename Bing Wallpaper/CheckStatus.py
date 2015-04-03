@@ -9,7 +9,7 @@ except:
 
 #Get home folder
 homeFolder = os.path.expanduser("~")
-pictureLocation = homeFolder + "/Pictures/bing-wallpaper"
+pictureLocation = homeFolder + "/Pictures/bing-wallpaper/"
 appLocation = homeFolder + "/Applications/Bing\ Wallpaper/BingWallpaper.app"
 internetConnected = False
 
