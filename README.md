@@ -25,6 +25,16 @@ This program is written in python specifically for OSX and tested on Yosemite 10
 		- If there are no file, run the app to download the wallpaper
 	- The wallpaper downloader app ensures that you only have the latest wallpaper in your folder. It ensures to delete all files from that folder before downloading the new wallpaper.
 
+###Plist
+- Added a plist file to the repo. Here is how to get this going.
+	- The complete code still goes into `~/Applications` folder
+	- Copy the plist file to `~/Library/LaunchAgents`
+	- Edit the plist file to reflect your username - OS 10.10 does not allow expansion of user home directory
+`<string>/Users/username/Applications/Bing Wallpaper/CheckBingStatus.app/Contents/MacOS/Application Stub</string>`
+	- Save and close
+	- Run the following terminal command
+`launchctl unload -w ~/Library/LaunchAgents/bing.wallpaper.mac.plist`
+
 ###Caveat
 ~~I have noticed that the Automator App files do not run the first time you download it to you machine. You will need to open the file with Automator and run it once, save and close. You should be good after that.~~
 With the dmg file, this may be fixed. Awaiting user input to confirm.
