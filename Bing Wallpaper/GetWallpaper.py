@@ -12,9 +12,16 @@ try:
     output_url = "http://www.bing.com/" + data["images"][0]["url"]
     if output_url:
         if getHighRes == 1:
-            print(output_url.replace("1080", "1200")) #Prints url to the image. Passes this on to the Automator workflow
+            try:
+                from urllib.request import urlretrieve
+                req = urlretrieve(output_url.replace("1080", "1200"), "001.jpg")
+                print(output_url.replace("1080", "1200")) #Prints url to the image. Passes this on to the Automator workflow
+            except:
+                print(output_url)
         else:
             print(output_url) #Prints url to the image. Passes this on to the Automator workflow
+
+
 
 #Else use python2
 except:
@@ -25,6 +32,11 @@ except:
     output_url = "http://www.bing.com/" + data["images"][0]["url"]
     if output_url:
         if getHighRes == 1:
-            print(output_url.replace("1080", "1200")) #Prints url to the image. Passes this on to the Automator workflow
+            try:
+                from urllib2.request import urlretrieve
+                req = urlretrieve(output_url.replace("1080", "1200"), "001.jpg")
+                print(output_url.replace("1080", "1200")) #Prints url to the image. Passes this on to the Automator workflow
+            except:
+                print(output_url)
         else:
             print(output_url) #Prints url to the image. Passes this on to the Automator workflow
