@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>409.1</string>
+	<string>409.2</string>
 	<key>AMApplicationVersion</key>
 	<string>2.5</string>
 	<key>AMDocumentVersion</key>
@@ -195,7 +195,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:232.000000</string>
+				<string>529.000000:232.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Find Finder Items 2.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -295,7 +295,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:332.000000</string>
+				<string>529.000000:332.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Folder Contents.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -527,7 +527,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:581.000000</string>
+				<string>529.000000:581.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -545,18 +545,20 @@
 					<false/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.url</string>
+						<string>com.apple.cocoa.path</string>
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
 				<string>1.1.2</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Safari</string>
+					<string>Finder</string>
 				</array>
 				<key>AMParameterProperties</key>
 				<dict>
-					<key>destinationPath</key>
+					<key>replaceExisting</key>
+					<dict/>
+					<key>toDirectory</key>
 					<dict>
 						<key>isPathPopUp</key>
 						<true/>
@@ -574,16 +576,18 @@
 					</array>
 				</dict>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Download URLs.action</string>
+				<string>/System/Library/Automator/Move Finder Items.action</string>
 				<key>ActionName</key>
-				<string>Download URLs</string>
+				<string>Move Finder Items</string>
 				<key>ActionParameters</key>
 				<dict>
-					<key>destinationPath</key>
+					<key>replaceExisting</key>
+					<false/>
+					<key>toDirectory</key>
 					<string>~/Pictures/bing-wallpaper</string>
 				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.DownloadInternetFile</string>
+				<string>com.apple.Automator.MoveFiles</string>
 				<key>CFBundleVersion</key>
 				<string>1.1.2</string>
 				<key>CanShowSelectedItemsWhenRun</key>
@@ -592,36 +596,33 @@
 				<true/>
 				<key>Category</key>
 				<array>
-					<string>AMCategoryInternet</string>
+					<string>AMCategoryFilesAndFolders</string>
 				</array>
 				<key>Class Name</key>
-				<string>DownloadURLsAction</string>
+				<string>MoveFilesAction</string>
 				<key>InputUUID</key>
-				<string>067C8D6E-9206-4993-A4FA-8E06F9811839</string>
+				<string>571AE764-82F9-4AAA-AB23-ED10CCC90638</string>
 				<key>Keywords</key>
 				<array>
 					<string>File</string>
-					<string>URL</string>
-					<string>Web</string>
-					<string>Download</string>
-					<string>Get</string>
+					<string>Move</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>9E52EEE2-2683-42E2-A9E8-1D5A1C1DC7B6</string>
+				<string>5C1DE61C-5FEC-4C1A-907B-F543BFE198F8</string>
 				<key>UUID</key>
-				<string>6B1F0C10-EF2F-4CED-ABC5-78CE109BE09C</string>
+				<string>A4A30176-A692-4EC2-AC80-74FB2E6AAD2E</string>
 				<key>UnlocalizedApplications</key>
 				<array>
-					<string>Safari</string>
+					<string>Finder</string>
 				</array>
 				<key>arguments</key>
 				<dict>
 					<key>0</key>
 					<dict>
 						<key>default value</key>
-						<string>~/Downloads</string>
+						<string>~/Desktop</string>
 						<key>name</key>
-						<string>destinationPath</string>
+						<string>toDirectory</string>
 						<key>required</key>
 						<string>0</string>
 						<key>type</key>
@@ -629,13 +630,26 @@
 						<key>uuid</key>
 						<string>0</string>
 					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>replaceExisting</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
 				</dict>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>301.500000:684.000000</string>
+				<string>529.000000:684.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Download URLs.action/Contents/Resources/Base.lproj/main.nib</string>
+				<string>/System/Library/Automator/Move Finder Items.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -715,38 +729,38 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>38C978FA-E228-40C9-9EA8-59868D57D2C1</key>
+		<key>13C22FE4-1DED-48BE-9B39-494ED125F767</key>
+		<dict>
+			<key>from</key>
+			<string>8EBD0691-AC52-417F-8598-80090801933C - 8EBD0691-AC52-417F-8598-80090801933C</string>
+			<key>to</key>
+			<string>B5238DCE-3C65-47A4-B574-775C672517E1 - B5238DCE-3C65-47A4-B574-775C672517E1</string>
+		</dict>
+		<key>355E234E-06D3-4593-9AC4-BFEFB36CB40E</key>
 		<dict>
 			<key>to</key>
 			<string>C3526F6A-6CF4-43F0-967E-5A8CE0163A0F - C3526F6A-6CF4-43F0-967E-5A8CE0163A0F</string>
 		</dict>
-		<key>7F6DEA7E-B97E-47BE-BAD1-CFFC98F388D3</key>
-		<dict>
-			<key>from</key>
-			<string>C3526F6A-6CF4-43F0-967E-5A8CE0163A0F - C3526F6A-6CF4-43F0-967E-5A8CE0163A0F</string>
-			<key>to</key>
-			<string>6B1F0C10-EF2F-4CED-ABC5-78CE109BE09C - 6B1F0C10-EF2F-4CED-ABC5-78CE109BE09C</string>
-		</dict>
-		<key>B00F93DA-2B8C-4B0E-9687-AE1F049AC514</key>
-		<dict>
-			<key>from</key>
-			<string>6B1F0C10-EF2F-4CED-ABC5-78CE109BE09C - 6B1F0C10-EF2F-4CED-ABC5-78CE109BE09C</string>
-			<key>to</key>
-			<string>946516ED-E49F-4907-B0AE-99A918F54CED - 946516ED-E49F-4907-B0AE-99A918F54CED</string>
-		</dict>
-		<key>B59B0011-F998-4584-B9E9-44119B193F2C</key>
+		<key>38EFB0EA-C0FD-431B-A4B9-A9D5A9A018F8</key>
 		<dict>
 			<key>from</key>
 			<string>66C3F436-AE0D-43AC-9D2B-F1907B520EC3 - 66C3F436-AE0D-43AC-9D2B-F1907B520EC3</string>
 			<key>to</key>
 			<string>8EBD0691-AC52-417F-8598-80090801933C - 8EBD0691-AC52-417F-8598-80090801933C</string>
 		</dict>
-		<key>BA723123-8178-4590-A4A7-71A2A71D8D29</key>
+		<key>562CCE22-FD6D-4EC6-B87B-E585C27A83C5</key>
 		<dict>
 			<key>from</key>
-			<string>8EBD0691-AC52-417F-8598-80090801933C - 8EBD0691-AC52-417F-8598-80090801933C</string>
+			<string>C3526F6A-6CF4-43F0-967E-5A8CE0163A0F - C3526F6A-6CF4-43F0-967E-5A8CE0163A0F</string>
 			<key>to</key>
-			<string>B5238DCE-3C65-47A4-B574-775C672517E1 - B5238DCE-3C65-47A4-B574-775C672517E1</string>
+			<string>A4A30176-A692-4EC2-AC80-74FB2E6AAD2E - A4A30176-A692-4EC2-AC80-74FB2E6AAD2E</string>
+		</dict>
+		<key>71407757-93B1-475E-B1FC-15C8347B9F65</key>
+		<dict>
+			<key>from</key>
+			<string>A4A30176-A692-4EC2-AC80-74FB2E6AAD2E - A4A30176-A692-4EC2-AC80-74FB2E6AAD2E</string>
+			<key>to</key>
+			<string>946516ED-E49F-4907-B0AE-99A918F54CED - 946516ED-E49F-4907-B0AE-99A918F54CED</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>
