@@ -25,6 +25,7 @@ def main():
 
     #URL in json format for latest wallpaper
     url = "http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US"
+    
     getHighRes = 1 #Manually change the resolution in the url to 1920x1200. Change to 0 if url breaks.
 
     #Get json response from bing.com
@@ -37,6 +38,7 @@ def main():
     #Else trying python2
     except:
            output = response.read()
+           
     #Get json output
     data = json.loads(output)
 
@@ -49,6 +51,7 @@ def main():
 
     #If higher resolution is preferred(default)
     if getHighRes == 1:
+        
         #Use try block to catch any failure in getting the high res image
         try:
             process_url(output_url_highres)
@@ -61,6 +64,7 @@ def main():
 
 
 def process_url(image_url):
+    
     #Get the filename of the new file from the url
     filename = pictureLocation + image_url.split('/')[-1]
 
@@ -70,8 +74,6 @@ def process_url(image_url):
     #Save the file path + filename to the output variable
     bingImage = path.abspath(filename)
     print(bingImage)
-
-
 
 
 main()
