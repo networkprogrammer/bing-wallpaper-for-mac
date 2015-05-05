@@ -64,16 +64,21 @@ def main():
 
 
 def process_url(image_url):
-    
-    #Get the filename of the new file from the url
-    filename = pictureLocation + image_url.split('/')[-1]
+    if not check_url(image_url)  == 1:
+        #Get the filename of the new file from the url
+        filename = pictureLocation + image_url.split('/')[-1]
 
-    #Retrieve the image from the web and save it to desired location
-    req = urlretrieve(image_url, filename)
+        #Retrieve the image from the web and save it to desired location
+        req = urlretrieve(image_url, filename)
 
-    #Save the file path + filename to the output variable
-    bingImage = path.abspath(filename)
-    print(bingImage)
+        #Save the file path + filename to the output variable
+        bingImage = path.abspath(filename)
+        print(bingImage)
+    else:
+        raise Exception('bad url')
 
-
+def check_url(image_url):
+    conn = urlopen(image_url)
+    if not conn.getcode() == 200:
+        return 1
 main()
