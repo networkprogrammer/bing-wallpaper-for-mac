@@ -8,13 +8,17 @@
    <array>
       <string>/Users/username/Applications/Bing Wallpaper/CheckBingStatus.app/Contents/MacOS/Application Stub</string>
    </array>
+   <!-- This runs the script on startup -->
+   <key>RunAtLoad</key>
+   <true/>
 
    <!-- This is to run the app at specified intervals -->
-<!--
+<!-- -->
 	<key>StartInterval</key>
-      <integer>21600</integer>
--->
+      <integer>3600</integer>
+
 	<!-- This is to run the app at certain calendar time -->
+<!--
    <key>StartCalendarInterval</key>
    <dict>
       <key>Minute</key>
@@ -22,5 +26,6 @@
       <key>Hour</key>
       <integer>8</integer>
    </dict>
+-->
 </dict>
 </plist>
