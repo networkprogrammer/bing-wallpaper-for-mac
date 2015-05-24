@@ -7,19 +7,38 @@ try:
 except:
     from urllib2 import urlopen
 
+#Ping function to validate internet connectivity
+def ping():
+    hostname = "www.bing.com"
+    response = os.system("ping -c 1 " + hostname)
+    # and then check the response...
+    if response == 0:
+        return True #If exit code is 0, ping completed successfully
+
+    else:
+        return False #Else no internet connection
+
+
+
 #Get home folder
 homeFolder = os.path.expanduser("~")
 pictureLocation = homeFolder + "/Pictures/bing-wallpaper/"
 appLocation = homeFolder + "/Applications/Bing\ Wallpaper/BingWallpaper.app"
 internetConnected = False
 
+
+#Ping and check status of internet connection
+internetConnected = ping()
+
+#Old block to check internet connection - does not always provide reliable result
+"""
 #Check to see if there is an active internet connection
 try:
     urlopen("http://www.bing.com",timeout=10)
     internetConnected = True
 except:
     internetConnected = False
-
+"""
 
 #Flag to see if any jpg file was found in the bing-wallpaper folder
 fileExists=0
@@ -60,5 +79,3 @@ for f in os.listdir(pictureLocation):
 #If there was no jpg file in the folder, run the app to get a new wallpaper
 if internetConnected==True and fileExists==0:
     os.system("open " + appLocation)
-
-
