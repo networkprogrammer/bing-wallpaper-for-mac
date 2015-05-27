@@ -27,7 +27,6 @@ This program is written in python specifically for OSX and tested on Yosemite 10
 - Edit the plist file to reflect your username
 - Save and close
 - Run the following terminal command
-
 `launchctl load ~/Library/LaunchAgents/bing.wallpaper.mac.plist`
 
 ###Uninstall
