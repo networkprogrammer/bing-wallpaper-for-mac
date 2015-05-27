@@ -23,15 +23,20 @@ This program is written in python specifically for OSX and tested on Yosemite 10
 
 ###Plist File
 - Copy the plist file to `~/Library/LaunchAgents`
-`cp bing.wallpaper.mac.plist ~/Library/LaunchAgents`
+```cp bing.wallpaper.mac.plist ~/Library/LaunchAgents
+```
 - Edit the plist file to reflect your username
 - Save and close
 - Run the following terminal command
-`launchctl load ~/Library/LaunchAgents/bing.wallpaper.mac.plist`
+```
+launchctl load ~/Library/LaunchAgents/bing.wallpaper.mac.plist
+```
 
 ###Uninstall
 - To uninstall run this command
-`launchctl unload ~/Library/LaunchAgents/bing.wallpaper.mac.plist`
+```
+launchctl unload ~/Library/LaunchAgents/bing.wallpaper.mac.plist
+```
 - Delete the `~/Applications/Bing Wallpaper` folder and its contents
 - Delete the `~/Pictures/bing-wallpaper` folder and its contents
 
