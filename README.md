@@ -7,14 +7,10 @@ This program is written in python specifically for OSX and tested on Yosemite 10
 
 -  The app calls the python scripts on execution.
 -  In order to save space, the script assumes that *only 1 image* is kept in the ~/Pictures/bing-wallpaper folder.
--  Place all the files into a single folder. Here it is in the Applications folder within the users home directory - ~/Applications/Bing\ Wallpaper
-	- You can change the location in the script
-	- `homeFolder = os.path.expanduser("~")`
-	- `pictureLocation = homeFolder + "/Pictures/bing-wallpaper"`
-	- `appLocation = homeFolder + "/Applications/Bing\ Wallpaper/Bing.app"`
--  Add the CheckBingStatus.app to your startup item and set it to hidden like so.
+-  Place all the files into a single folder. Here it is in the Applications folder within the users home directory - `~/Applications/Bing Wallpaper`
+-  Open the plist file with your favorite editor and change the username to your username
 
-![Image](http://i.imgur.com/4zDj2AE.png)
+![Image](http://i.imgur.com/Zr9qkQs.jpg)
 
 ###The App
 - The application is split in the following ways
@@ -25,19 +21,19 @@ This program is written in python specifically for OSX and tested on Yosemite 10
 		- If there are no file, run the app to download the wallpaper
 	- The wallpaper downloader app ensures that you only have the latest wallpaper in your folder. It ensures to delete all files from that folder before downloading the new wallpaper.
 
-###Plist
-- Added a plist file to the repo. Here is how to get this going.
-	- The complete code still goes into `~/Applications` folder
-	- Copy the plist file to `~/Library/LaunchAgents`
-	- Edit the plist file to reflect your username - OS 10.10 does not allow expansion of user home directory
-`<string>/Users/username/Applications/Bing Wallpaper/CheckBingStatus.app/Contents/MacOS/Application Stub</string>`
+###Plist File
+- Copy the plist file to `~/Library/LaunchAgents`
+`cp bing.wallpaper.mac.plist ~/Library/LaunchAgents`
+	- Edit the plist file to reflect your username
 	- Save and close
 	- Run the following terminal command
-`launchctl unload -w ~/Library/LaunchAgents/bing.wallpaper.mac.plist`
+`launchctl load ~/Library/LaunchAgents/bing.wallpaper.mac.plist`
 
-###Caveat
-~~I have noticed that the Automator App files do not run the first time you download it to you machine. You will need to open the file with Automator and run it once, save and close. You should be good after that.~~
-With the dmg file, this may be fixed. Awaiting user input to confirm.
+###Uninstall
+- To uninstall run this command
+`launchctl unload ~/Library/LaunchAgents/bing.wallpaper.mac.plist`
+- Delete the `~/Applications/Bing Wallpaper` folder and its contents
+- Delete the `~/Pictures/bing-wallpaper` folder and its contents
 
 ###Thanks
 Feel free to share you comments and thoughts. I am new to github.
