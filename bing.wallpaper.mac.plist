@@ -9,9 +9,10 @@
       <string>/Users/username/Applications/Bing Wallpaper/CheckBingStatus.app/Contents/MacOS/Application Stub</string>
    </array>
    <!-- This runs the script on startup -->
+   <!--
    <key>RunAtLoad</key>
    <true/>
-
+   -->
    <!-- This is to run the app at specified intervals -->
 <!-- -->
 	<key>StartInterval</key>
